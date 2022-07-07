@@ -1,24 +1,49 @@
 from tkinter import *
 from PIL import ImageTk,Image
 from tkinter import messagebox
-import pymysql
+import sqlite3
+import backend
+"""
+    A function that is used to register a book.
+"""
+def bookRegister():
+   
+  # Getting the values from the entry boxes.
+    bid = bookInfo1.get()
+    title = bookInfo2.get()
+    author = bookInfo3.get()
+    status = bookInfo4.get()
+    status = status.lower()
+    
+    # insertBooks = "insert into "+bookTable+" values('"+bid+"','"+title+"','"+author+"','"+status+"')"
+    # Trying to insert the data into the database. If it fails, it will show an error message.
+    try:
+        backend.insert(title,author)
+        messagebox.showinfo('Success',"Book added successfully")
+    except:
+        messagebox.showinfo("Error","Can't add data into Database")
+    
+    print(bid)
+    print(title)
+    print(author)
+    print(status)
 
+
+    root.destroy()
+    
 def addBook(): 
     
-    global bookInfo1 ,bookInfo2, bookInfo3, bookInfo4, Canvas1, con, cur, bookTable, root
+    global bookInfo1,bookInfo2,bookInfo3,bookInfo4,Canvas1,con,cur,bookTable,root
     
     root = Tk()
     root.title("Library")
     root.minsize(width=400,height=400)
     root.geometry("600x500")
-    """ 
-
-    mypass = "root"
-    mydatabase="db"
-
-    con = pymysql.connect( host="localhost",user="root",password=mypass,database=mydatabase)
-    cur = con.cursor()"""
-
+   
+    # Connecting to the database and creating a cursor.
+    con = sqlite3.connect("books.db")
+    cur = con.cursor()
+    
     # Enter Table Names here
     bookTable = "books" # Book Table
 
@@ -33,11 +58,13 @@ def addBook():
     headingLabel = Label(headingFrame1, text="Add Books", bg='black', fg='white', font=('Courier',15))
     headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
 
+# Creating a frame and placing it in the window.
 
     labelFrame = Frame(root,bg='black')
     labelFrame.place(relx=0.1,rely=0.4,relwidth=0.8,relheight=0.4)
         
     # Book ID
+    # Creating a label and an entry box.
     lb1 = Label(labelFrame,text="Book ID : ", bg='black', fg='white')
     lb1.place(relx=0.05,rely=0.2, relheight=0.08)
         
@@ -66,10 +93,10 @@ def addBook():
     bookInfo4.place(relx=0.3,rely=0.65, relwidth=0.62, relheight=0.08)
         
     #Submit Button
-    #SubmitBtn = Button(root,text="SUBMIT",bg='#d1ccc0', fg='black',command=bookRegister)
-    #SubmitBtn.place(relx=0.28,rely=0.9, relwidth=0.18,relheight=0.08)
+    SubmitBtn = Button(root,text="SUBMIT",bg='#d1ccc0', fg='black',command=bookRegister)
+    SubmitBtn.place(relx=0.28,rely=0.9, relwidth=0.18,relheight=0.08)
     
-    quitBtn = Button(root,text="Quit",bg='#f7f1e3', fg='black',       command=root.destroy)
+    quitBtn = Button(root,text="Quit",bg='#f7f1e3', fg='black', command=root.destroy)
     quitBtn.place(relx=0.53,rely=0.9, relwidth=0.18,relheight=0.08)
     
     root.mainloop()
