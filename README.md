@@ -1,6 +1,6 @@
 # Library Management System
 
-To develop a library database system using Tkinter and sqlite3 that allows users to view booklist, add/remove books, issue and return books.
+In this project we have developed a library database system using Tkinter and sqlite3 that allows users to view booklist, add/remove books, issue and return books.
 
 ## Libraries Used
 
