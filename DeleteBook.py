@@ -41,24 +41,25 @@ def delete():
     
     Canvas1 = Canvas(root)
     
-    Canvas1.config(bg="#006B38")
+    Canvas1.config(bg="#bd7b02")
     Canvas1.pack(expand=True,fill=BOTH)
         
-    headingFrame1 = Frame(root,bg="#FFBB00",bd=5)
+    headingFrame1 = Frame(root,bg="#fad796",bd=5)
     headingFrame1.place(relx=0.25,rely=0.1,relwidth=0.5,relheight=0.13)
         
-    headingLabel = Label(headingFrame1, text="Delete Book", bg='black', fg='white', font=('Courier',15))
+    headingLabel = Label(headingFrame1, text="Delete Book", bg='black', fg='white', font=('Courier',20))
     headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
     
+    
     labelFrame = Frame(root,bg='black')
-    labelFrame.place(relx=0.1,rely=0.3,relwidth=0.8,relheight=0.5)   
-        
+    labelFrame.place(relx=0.1,rely=0.45,relwidth=0.8,relheight=0.2)
+
     # Book ID to Delete
-    lb2 = Label(labelFrame,text="Book ID : ", bg='black', fg='white')
-    lb2.place(relx=0.05,rely=0.5)
+    lb2 = Label(labelFrame,text="Book ID : ", bg='black', fg='white',font=(10))
+    lb2.place(relx=0.05,rely=0.40)
         
     bookInfo1 = Entry(labelFrame)
-    bookInfo1.place(relx=0.3,rely=0.5, relwidth=0.62)
+    bookInfo1.place(relx=0.3,rely=0.45, relwidth=0.62)
     
     #Submit Button
     SubmitBtn = Button(root,text="SUBMIT",bg='#d1ccc0', fg='black',command=deleteBook)
