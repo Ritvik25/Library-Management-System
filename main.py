@@ -8,11 +8,11 @@ import IssueBook
 import ReturnBook 
 
 # Creating a window with title "KJ SOMAIYA LIBRARY" and setting the minimum size of the window to
-# 400x400 and the geometry to 600x500.
+# 400x510 and the geometry to 600x450.
 root = Tk()
 root.title("KJ SOMAIYA LIBRARY")
-root.minsize(width=400,height=400)
-root.geometry("600x500")
+root.minsize(width=400,height=510)
+root.geometry("600x450")
 
 # Take n greater than 0.25 and less than 5
 
@@ -49,18 +49,22 @@ headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
 
 # Creating buttons and placing them in the window.
 btn1 = Button(root,text="Add Book Details",bg='black', fg='white', command=AddBook.addBook)
-btn1.place(relx=0.28,rely=0.4, relwidth=0.45,relheight=0.1)
+btn1.place(relx=0.28,rely=0.35, relwidth=0.45,relheight=0.1)
     
 btn2 = Button(root,text="Delete Book",bg='black', fg='white', command=DeleteBook.delete)
-btn2.place(relx=0.28,rely=0.5, relwidth=0.45,relheight=0.1)
+btn2.place(relx=0.28,rely=0.45, relwidth=0.45,relheight=0.1)
     
 btn3 = Button(root,text="View Book List",bg='black', fg='white', command=ViewBooks.View)
-btn3.place(relx=0.28,rely=0.6, relwidth=0.45,relheight=0.1)
+btn3.place(relx=0.28,rely=0.55, relwidth=0.45,relheight=0.1)
     
 btn4 = Button(root,text="Issue Book to Student",bg='black', fg='white', command = IssueBook.issueBook)
-btn4.place(relx=0.28,rely=0.7, relwidth=0.45,relheight=0.1)
+btn4.place(relx=0.28,rely=0.65, relwidth=0.45,relheight=0.1)
     
 btn5 = Button(root,text="Return Book",bg='black', fg='white', command =ReturnBook.returnBook)
-btn5.place(relx=0.28,rely=0.8, relwidth=0.45,relheight=0.1)
+btn5.place(relx=0.28,rely=0.75, relwidth=0.45,relheight=0.1)
+
+#Creating Quit button
+quitBtn = Button(root,text="Quit",bg='#000000', fg='white', command=root.destroy)
+quitBtn.place(relx=0.42,rely=0.91, relwidth=0.18,relheight=0.08)
 
 root.mainloop()
