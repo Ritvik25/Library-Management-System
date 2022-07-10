@@ -37,17 +37,6 @@ def view():
     conn.close()
     return rows
 
-def search(title="",author="",year="",price=""):
-    """
-    It requires atleast one parameter to be passed in. It connects to the database, fetches all the items in db with particular search criteria, closes the connection, and returns the results.
-    """
-    conn=sqlite3.connect("books.db")
-    cur=conn.cursor()
-    cur.execute("SELECT * FROM books WHERE title=? OR author=? OR year=? OR price=?",(title,author,year,price))
-    rows=cur.fetchall()
-    conn.close()
-    return rows
-
 def delete(bid):
     """
     It takes the id of the book as an argument and deletes the book from the database
