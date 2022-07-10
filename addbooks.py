@@ -8,13 +8,10 @@ import backend
 """
 def bookRegister():
    
-  # Getting the values from the entry boxes.
-    #bid = bookInfo1.get()
+  
     title = bookInfo2.get()
     author = bookInfo3.get()
-    #status = bookInfo4.get()
-    #status = status.lower()
-    
+        
     # insertBooks = "insert into "+bookTable+" values('"+bid+"','"+title+"','"+author+"','"+status+"')"
     # Trying to insert the data into the database. If it fails, it will show an error message.
     try:
@@ -58,19 +55,11 @@ def addBook():
     headingLabel = Label(headingFrame1, text="Add Books", bg='black', fg='white', font=('Courier',23))
     headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
 
-# Creating a frame and placing it in the window.
+    # Creating a frame and placing it in the window.
 
     labelFrame = Frame(root,bg='black')
     labelFrame.place(relx=0.1,rely=0.4,relwidth=0.8,relheight=0.3)
-        
-    # Book ID
-    # Creating a label and an entry box.
-    #lb1 = Label(labelFrame,text="Book ID : ", bg='black', fg='white')
-    #lb1.place(relx=0.05,rely=0.2, relheight=0.08)
-        
-    """bookInfo1 = Entry(labelFrame)
-    bookInfo1.place(relx=0.3,rely=0.2, relwidth=0.62, relheight=0.08)"""
-        
+  
     # Title
     lb2 = Label(labelFrame,text="Title : ", bg='black', fg='white',font=(10))
     lb2.place(relx=0.05,rely=0.35, relheight=0.12)
