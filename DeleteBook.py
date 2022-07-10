@@ -13,17 +13,23 @@ bookTable = "books" #Book Table
 def deleteBook():
     bid=bookInfo1.get()
     backend.delete(bid)
+
+# Creating a message box
+    try:
+        messagebox.showinfo('Success',"Book deleted successfully")
+    except:
+        messagebox.showinfo("Error","Invalid Book Id")
     
 def delete(): 
     
     global bookInfo1,bookInfo2,bookInfo3,bookInfo4,Canvas1,con,cur,bookTable,root
     
+    # Creating Delete Book Window
     root = Tk()
     root.title("Library")
     root.minsize(width=400,height=400)
     root.geometry("600x500")
 
-    
     Canvas1 = Canvas(root)
     
     Canvas1.config(bg="#bd7b02")
@@ -34,7 +40,6 @@ def delete():
         
     headingLabel = Label(headingFrame1, text="Delete Book", bg='black', fg='white', font=('Courier',20))
     headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
-    
     
     labelFrame = Frame(root,bg='black')
     labelFrame.place(relx=0.1,rely=0.45,relwidth=0.8,relheight=0.2)
