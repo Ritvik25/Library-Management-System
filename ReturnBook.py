@@ -81,6 +81,12 @@ def returnn():
     bid=bookInfo1.get()
     backend.returnBook(bid)
     
+    try:
+        messagebox.showinfo('Success',"Book returned successfully")
+    except:
+        backend.insert(bid)
+        messagebox.showinfo("Error","Book-ID invalid")    
+    
 def returnBook(): 
     
     global bookInfo1,SubmitBtn,quitBtn,Canvas1,con,cur,root,labelFrame, lb1
