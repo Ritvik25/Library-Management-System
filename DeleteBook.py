@@ -10,21 +10,6 @@ cur = con.cursor()
 issueTable = "books_issued" 
 bookTable = "books" #Book Table
 
-
-# def deleteBook():
-    
-#     bid = bookInfo1.get()
-    
-#     deleteSql = "delete from "+bookTable+" where bid = '"+bid+"'"
-#     deleteIssue = "delete from "+issueTable+" where bid = '"+bid+"'"
-#     try:
-#         cur.execute(deleteSql)
-#         con.commit()
-#         cur.execute(deleteIssue)
-#         con.commit()
-#         messagebox.showinfo('Success',"Book Record Deleted Successfully")
-#     except:
-#         messagebox.showinfo("Please check Book ID")
 def deleteBook():
     bid=bookInfo1.get()
     backend.delete(bid)
