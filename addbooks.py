@@ -49,13 +49,13 @@ def addBook():
 
     Canvas1 = Canvas(root)
     
-    Canvas1.config(bg="#ff6e40")
+    Canvas1.config(bg="#f0c575")
     Canvas1.pack(expand=True,fill=BOTH)
         
-    headingFrame1 = Frame(root,bg="#FFBB00",bd=5)
+    headingFrame1 = Frame(root,bg="#9e5b09",bd=5)
     headingFrame1.place(relx=0.25,rely=0.1,relwidth=0.5,relheight=0.13)
 
-    headingLabel = Label(headingFrame1, text="Add Books", bg='black', fg='white', font=('Courier',15))
+    headingLabel = Label(headingFrame1, text="Add Books", bg='black', fg='white', font=('Courier',23))
     headingLabel.place(relx=0,rely=0, relwidth=1, relheight=1)
 
 # Creating a frame and placing it in the window.
