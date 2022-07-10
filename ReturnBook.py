@@ -4,14 +4,7 @@ from tkinter import messagebox
 import pymysql
 import backend
 import sqlite3
-"""
-# Add your own database name and password here to reflect in the code
-mypass = "password"
-mydatabase="db"
 
-con = pymysql.connect(host="localhost",user="root",password=mypass,database=mydatabase)
-cur = con.cursor()
-"""
 con = sqlite3.connect("books.db")
 cur = con.cursor()
 # Enter Table Names here
